@@ -1,0 +1,17 @@
+init_config:
+  min_collection_interval: 15
+
+python_module: helloworld2
+
+instances:
+  - {}
+
+logs:
+  - type: file
+    path: /opt/datadog-agent/logs/helloworld2.log
+    service: helloworld2
+    source: custom
+
+  # On Windows, the script logs to %TEMP% (e.g., C:\Users\You\AppData\Local\Temp)
+  # To collect logs on Windows, you could change the path like:
+  # path: C:\Temp\helloworld2.log
