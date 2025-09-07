@@ -61,10 +61,3 @@ This might indicate a reporting issue or the agent being down.
 {{/is_no_data}}
 
 ---
-
-💡 *This message shows how Datadog conditional blocks work:*  
-- `#is_alert` → Alert text  
-- `#is_warning` → Warning text  
-- `#is_alert_recovery` → Recovery text  
-- `#is_no_data` → No-data state text  
-```
