@@ -1,9 +1,9 @@
-# Suggested Title
+# Suggested Notification Title
 ```
 🚨 [{{status}}] Host {{host.name}} (IP: {{host.ip}}) - Desktop File Count (HelloWorld2)
 ```
 
-# Suggested Content
+# Suggested Notification Content
 ```
 These are constants included in every alert:
 - Host: {{host.name}}
