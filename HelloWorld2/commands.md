@@ -1,17 +1,20 @@
 # Lab Commands Reference
 
+## Repo
+```bash
+# create the folder that will host the repo:
+mkdir ~/Desktop/repo
+cd ~/Desktop/repo
+
+# cloning the repo:
+git clone git@github.com:lancel00zz/helloworld2-lab.git
+```
+
 ## Terminal 
 ```bash
 echo "export PS1='%~:$ '" >> ~/.zshrc && source ~/.zshrc
 ```
 
-## Repo
-```bash
-mkdir ~/Desktop/repo
-cd ~/Desktop/repo
-# cloning the repo:
-git clone git@github.com:lancel00zz/helloworld2-lab.git
-```
 
 ## Single Step Installation
 ```bash
