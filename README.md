@@ -1,4 +1,6 @@
 # helloworld2
-Helloworld2 And Ladder04 Custom Metrics Check For Agent
-It contains the conf.yaml file of the check and the python script
-Designed for TS Foundation1 Onboarding First Week for newhire
+Helloworld2 is a Custom Check lab designed to run along with
+the deck Custom Check Lab.
+
+It allows access to all commands and scripts and files needed to 
+run the lab.
