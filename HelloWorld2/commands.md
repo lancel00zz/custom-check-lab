@@ -10,11 +10,6 @@ cd ~/Desktop/repo
 git clone git@github.com:lancel00zz/helloworld2-lab.git
 ```
 
-## Terminal 
-```bash
-echo "export PS1='%~:$ '" >> ~/.zshrc && source ~/.zshrc
-```
-
 
 ## Single Step Installation
 ```bash
