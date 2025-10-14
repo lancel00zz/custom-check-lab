@@ -13,7 +13,7 @@ git clone git@github.com:lancel00zz/helloworld2-lab.git
 
 ## Single Step Installation
 ```bash
-sudo cp ~/Desktop/repo/helloworld2-lab/HelloWorld2/script_and_config/helloworld2.py /opt/datadog-agent/etc/checks.d/ && echo "✅ Copied helloworld2.py in checks.d" \
+sudo cp ~/Desktop/repo/custom-check-lab/script_and_config/helloworld2.py /opt/datadog-agent/etc/checks.d/ && echo "✅ Copied helloworld2.py in checks.d" \
 && sudo mkdir -p /opt/datadog-agent/etc/conf.d/helloworld2.d && echo "✅ Created directory \"helloworld2.d\"" \
-&& sudo cp ~/Desktop/repo/helloworld2-lab/HelloWorld2/script_and_config/conf.yaml /opt/datadog-agent/etc/conf.d/helloworld2.d/ && echo "✅ Copied conf.yaml in helloworld2.d"
+&& sudo cp ~/Desktop/repo/custom-check-lab/script_and_config/conf.yaml /opt/datadog-agent/etc/conf.d/helloworld2.d/ && echo "✅ Copied conf.yaml in helloworld2.d"
 ```
