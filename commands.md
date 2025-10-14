@@ -7,7 +7,7 @@ mkdir ~/Desktop/repo
 cd ~/Desktop/repo
 
 # cloning the repo:
-git clone git@github.com:lancel00zz/helloworld2-lab.git
+git clone git@github.com:lancel00zz/custom-check-lab.git
 ```
 
 
