@@ -18,5 +18,5 @@ cd ~/Desktop/repo/custom-check-lab/script_and_config && \
 cp helloworld2.py /opt/datadog-agent/etc/checks.d/ && \
 mkdir -p /opt/datadog-agent/etc/conf.d/helloworld2.d && \
 cp conf.yaml /opt/datadog-agent/etc/conf.d/helloworld2.d/ && \
-echo '✅ Files successfully copied and directory created!'
+echo $'\033[0;32m\u2705  Files successfully copied and directory created!\033[0m'
 ```
