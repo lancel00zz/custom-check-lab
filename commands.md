@@ -12,6 +12,7 @@ git clone git@github.com:lancel00zz/custom-check-lab.git
 
 
 ## Single Step Installation
+Copy the full block of commands below (five lines) and run it in your Terminal.
 ```bash
 cd ~/Desktop/repo/custom-check-lab/script_and_config && \
 cp helloworld2.py /opt/datadog-agent/etc/checks.d/ && \
