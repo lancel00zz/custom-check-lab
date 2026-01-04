@@ -86,3 +86,4 @@ class Helloworld2Check(AgentCheck):
                     }, f)
             except Exception as e:
                 self.log.warning(f"Could not write state file: {e}")
+                # version 1.0 - special for Custom Check Lab
