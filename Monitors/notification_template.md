@@ -1,6 +1,6 @@
 # Suggested Notification Title
 ```
-🚨 [{{status}}] Host {{host.name}} (IP: {{host.ip}}) - Desktop File Count (HelloWorld2)
+🚨 Host {{host.name}} (IP: {{host.ip}}) - Desktop File Count (HelloWorld2)
 ```
 
 # Suggested Notification Content
