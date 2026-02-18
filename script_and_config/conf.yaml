@@ -1,7 +1,7 @@
 init_config:
   min_collection_interval: 15
 
-python_module: helloworld2
+name: helloworld2
 
 instances:
   - {}
