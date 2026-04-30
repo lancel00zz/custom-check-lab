@@ -16,9 +16,22 @@ class Helloworld2Check(AgentCheck):
 
         # Count visible files and folders
         try:
+            def is_visible(name, full_path):
+                if name.startswith('.'):
+                    return False
+                if not os.path.exists(full_path):
+                    return False
+                if platform.system().lower() != 'windows':
+                    try:
+                        if os.stat(full_path).st_flags & 0x8000:  # UF_HIDDEN
+                            return False
+                    except OSError:
+                        pass
+                return True
+
             file_count = len([
                 f for f in os.listdir(desktop_path)
-                if not f.startswith('.') and os.path.exists(os.path.join(desktop_path, f))
+                if is_visible(f, os.path.join(desktop_path, f))
             ])
         except Exception as e:
             self.log.warning(f"Could not access Desktop: {e}")
