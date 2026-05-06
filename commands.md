@@ -1,6 +1,6 @@
 # Lab Commands Reference
 
-## About the Agent
+## About the Agent on a Mac
 ```bash
 datadog-agent launch-gui #display the Agent GUI
 launchctl stop com.datadoghq.agent #stop datadog agent
