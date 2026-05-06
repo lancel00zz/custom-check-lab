@@ -1,5 +1,13 @@
 # Lab Commands Reference
 
+## About the Agent
+```bash
+datadog-agent launch-gui #display the Agent GUI
+launchctl stop com.datadoghq.agent #stop datadog agent
+launchctl start com.datadoghq.agent #start the Datadog Agent
+```
+
+
 ## Repo
 ```bash
 # create the folder that will host the repo:
