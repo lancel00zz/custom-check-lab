@@ -40,3 +40,8 @@ mkdir -p /opt/datadog-agent/etc/conf.d/helloworld2.d && \
 cp conf.yaml /opt/datadog-agent/etc/conf.d/helloworld2.d/ && \
 echo $'\033[0;32m\u2705  Files successfully copied and directory created!\033[0m'
 ```
+
+## Full Disk Access for the Agent
+```bash
+/opt/datadog-agent/bin/agent/agent
+```
