@@ -4,6 +4,7 @@ import time
 import logging
 import socket
 import platform
+import subprocess
 from datadog_checks.base import AgentCheck
 
 class Helloworld2Check(AgentCheck):
@@ -11,6 +12,17 @@ class Helloworld2Check(AgentCheck):
         # Resolve Desktop path based on OS
         if platform.system().lower() == 'windows':
             desktop_path = os.path.join(os.environ.get("USERPROFILE", ""), "Desktop")
+        elif platform.system().lower() == 'darwin':
+            try:
+                console_user = subprocess.check_output(
+                    ["stat", "-f", "%Su", "/dev/console"], timeout=5
+                ).decode().strip()
+            except Exception:
+                console_user = None
+            if console_user and console_user not in ("root", ""):
+                desktop_path = f"/Users/{console_user}/Desktop"
+            else:
+                desktop_path = os.path.expanduser("~/Desktop")  # fallback, old behavior
         else:
             desktop_path = os.path.expanduser("~/Desktop")
 
