@@ -3,8 +3,20 @@
 ## About the Agent on a Mac
 ```bash
 datadog-agent launch-gui #display the Agent GUI
-launchctl stop com.datadoghq.agent #stop datadog agent
-launchctl start com.datadoghq.agent #start the Datadog Agent
+
+#stop datadog agent
+(launchctl stop com.datadoghq.agent)
+sudo launchctl kill SIGTERM system/com.datadoghq.agent
+
+#start datadog agent
+(launchctl start com.datadoghq.agent)
+sudo launchctl kickstart system/com.datadoghq.agent
+
+#restart datadog agent
+sudo launchctl kickstart -k system/com.datadoghq.agent
+
+#check process ID for datadog agent
+sudo launchctl print system/com.datadoghq.agent | grep pid
 ```
 
 
