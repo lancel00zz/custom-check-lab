@@ -1,3 +1,14 @@
+# version 2.0 - special for Custom Check Lab
+# Changes vs 1.0:
+#  - Resolves the *console user's* Desktop via /dev/console instead of "~"
+#    (the Agent runs as _dd-agent since 7.79, whose home is /var/empty).
+#  - Works identically whether "Desktop & Documents Folders" iCloud sync
+#    is on or off: /Users/<user>/Desktop is the same path in both cases.
+#  - Requires on macOS: FDA on /opt/datadog-agent/bin/agent/agent (TCC layer)
+#    and an ACL on ~/Desktop for _dd-agent (POSIX layer, folders are mode 700
+#    on accounts created on modern macOS):
+#    chmod +a "user:_dd-agent allow list,search,readattr,readextattr,readsecurity" ~/Desktop
+
 import os
 import json
 import time
@@ -13,6 +24,8 @@ class Helloworld2Check(AgentCheck):
         if platform.system().lower() == 'windows':
             desktop_path = os.path.join(os.environ.get("USERPROFILE", ""), "Desktop")
         elif platform.system().lower() == 'darwin':
+            # "~" would expand to _dd-agent's home (/var/empty), so ask macOS
+            # who owns the console (= the logged-in GUI user) instead.
             try:
                 console_user = subprocess.check_output(
                     ["stat", "-f", "%Su", "/dev/console"], timeout=5
@@ -22,7 +35,7 @@ class Helloworld2Check(AgentCheck):
             if console_user and console_user not in ("root", ""):
                 desktop_path = f"/Users/{console_user}/Desktop"
             else:
-                desktop_path = os.path.expanduser("~/Desktop")  # fallback, old behavior
+                desktop_path = os.path.expanduser("~/Desktop")  # fallback (e.g. login screen)
         else:
             desktop_path = os.path.expanduser("~/Desktop")
 
@@ -111,4 +124,3 @@ class Helloworld2Check(AgentCheck):
                     }, f)
             except Exception as e:
                 self.log.warning(f"Could not write state file: {e}")
-                # version 1.0 - special for Custom Check Lab
