@@ -19,6 +19,11 @@ sudo launchctl kickstart -k system/com.datadoghq.agent
 sudo launchctl print system/com.datadoghq.agent | grep pid
 ```
 
+## Updating FDA (Full Disk Access)
+Press Cmd+Shift+G then paste line below
+```bash
+/opt/datadog-agent/bin/agent/agent
+```
 
 ## Repo
 ```bash
