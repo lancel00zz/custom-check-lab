@@ -1,1 +1,1 @@
-fileCountChange %{date("yyyy-MM-dd HH:mm:ss,SSS"):timestamp} %{word:level}: %{data:alert_icon} File count changed: %{integer:file_count.previous} → %{integer:file_count.current} on %{notSpace:host.name}
+fileCountChange %{date("yyyy-MM-dd HH:mm:ss,SSS"):timestamp}\s+%{word:level}: %{data:alert_icon} File count changed: %{integer:file_count.previous}\s+→\s+%{integer:file_count.current}\s+on\s+%{notSpace:host.name}
